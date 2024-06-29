@@ -15,3 +15,7 @@ services:
   frontend:
     env_file: .env
     build: ./frontend/
+  gateway:
+    build: ./gateway/
+    ports:
+      - 8000:80
