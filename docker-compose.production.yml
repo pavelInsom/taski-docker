@@ -8,7 +8,7 @@ services:
     image: postgres:13.10
     env_file: .env
     volumes:
-      - pg_data:/var/lib/postgresql/pg_data
+      - pg_data_production:/var/lib/postgresql/pg_data
   
   backend:
     image: pavelinsom/taski_backend
@@ -16,18 +16,18 @@ services:
     depends_on:
       - db
     volumes:
-      - static:/backend_static
+      - static_volume:/backend_static
   
   frontend:
     env_file: .env
     image: pavelinsom/taski_frontend 
     volumes:
-     - static:/frontend_static
+     - static_volume:/frontend_static
     command: cp -r /app/build/. /frontend_static/
   
   gateway:
     image: pavelinsom/taski_gateway
     volumes:
-       - static:/staticfiles/ 
+       - static_volume:/staticfiles/ 
     ports:
       - 8000:80
