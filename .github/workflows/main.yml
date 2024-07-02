@@ -22,4 +22,4 @@ jobs:
       - name: Check out repository code  # Имя шага задаём сами
         uses: actions/checkout@v4  # Берём готовое решение из библиотеки GitHub Actions
       # Выполняем команду tree в текущей директории
-      - name: Print project tree
+      - name: Print project tree 
