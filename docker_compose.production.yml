@@ -22,7 +22,7 @@ services:
      - static:/frontend_static
     command: cp -r /app/build/. /frontend_static/
   gateway:
-    image: pavelinsom/gateway
+    image: pavelinsom/taski_gateway
     volumes:
        - static:/staticfiles/ 
     ports:
